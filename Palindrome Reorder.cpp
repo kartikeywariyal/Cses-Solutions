@@ -1,0 +1,103 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define endl "\n"
+#define yes() cout << "YES" << endl
+#define no() cout << "NO" << endl
+#define ps push_back
+#define pp pop_back
+#define vi vector<int>
+#define vl vector<long long>
+#define sti stack<int>
+#define ld long double
+#define all(arr) arr.begin(), arr.end()
+#define umap(a, b) unordered_map<a, b>
+#define omap(a, b) map<a, b>
+#define ll long long
+#define pri pair<int, int>
+#define print1(a) cout << a << endl
+#define print(container) \
+    do { \
+        for (const auto& element : container) { \
+            cout << element << " "; \
+        } \
+        cout << endl; \
+    } while (0)
+#define mod 1000000007
+
+#define forl(i, a, b) for (int i = a; i < b; i++)
+
+bool isVowel(char ch) {
+    char lowerChar = std::tolower(ch);
+    return lowerChar == 'a' || lowerChar == 'e' || lowerChar == 'i' || lowerChar == 'o' || lowerChar == 'u';
+}
+
+int gcd(int a, int b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+
+bool isPrime(int n) {
+    if (n <= 1)
+        return false;
+    for (int i = 2; i <= sqrt(n); i++)
+        if (n % i == 0)
+            return false;
+    return true;
+}
+
+
+
+void solve() {
+    string s;
+    cin >> s;
+    int odd = 0;
+    map<char, int> mp;
+    char c;
+
+    for (char i : s) {
+        mp[i]++;
+    }
+
+    for (auto i : mp) {
+        if (i.second % 2 == 1) {
+            odd += 1;
+            c = i.first;
+        }
+        
+    }
+
+    if (odd > 1) {
+        cout << "NO SOLUTION" << endl;
+        return;
+    }
+
+    deque<char> l;
+    if(odd==1)
+    { 
+        if(c)l.push_back(c);
+        
+    }
+
+    for (auto i : mp) {
+        if(i.first==c)i.second--;
+        while (i.second) {
+            l.push_front(i.first);
+            l.push_back(i.first);
+            i.second -= 2;
+        }
+    }
+
+    for (char o : l) cout << o;
+    cout << endl;
+    if(l.size()==0)cout<<"NO SOLUTION"<<endl;
+}
+
+
+signed main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+   solve();
+    return 0;
+}
