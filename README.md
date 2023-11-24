@@ -1,10 +1,8 @@
 - 👋 Hi, I’m @kartikeywariyal
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+- 👀 I’m interested in exploring new things 
+- 🌱 I’m currently learning dsa concepts and doing competitive programming.
 
-<!---
-kartikeywariyal/kartikeywariyal is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+
+  Here i will post cses cp sheet codes . u can learn a new approaches from my solutions.
+
+cses sheet link:  https://cses.fi/problemset/list/
